@@ -62,8 +62,8 @@ class index(TemplateView):
             return render(request, "resultado.html", {'resoluciones' : comprimir })
 
 def LiteralTG(consultar,modelo):
-    #model = Word2Vec.load("static/RedNeu/word2vec.model")
-    model = FastText.load(f'static/RedNeu/{modelo}')
+    model = Word2Vec.load("static/RedNeu/word2vec.model")
+    #model = FastText.load(f'static/RedNeu/{modelo}')
     consulta = consultar
     entrada = []
     consulta = consulta.split()
