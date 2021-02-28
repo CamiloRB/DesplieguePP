@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block contenido %} {% load static %}
+<div class="text-center">
+  <img
+    src="{% static 'img/Escudo.jpg' %}"
+    alt="Escudo"
+    width="150px"
+    height="213px"
+    style="margin-top: 3%"
+  />
+    <form id="theFront" method="POST">
+      <div class="row">
+        {% csrf_token %}
+        <div class="input-group BarraBus">
+          <input
+            type="text"
+            class="input-group-text bg-white form-select text-center EntradaBus col-8"
+            name="busqueda"
+            placeholder="¿Que desea buscar?"
+          />
+          <select class="form-select EntradaMod col-4" id="modeloE" name="modeloE">
+            <option selected>Selecciona...</option>
+            <option value="FTCBoW0.model">Modelo1</option>
+            <option value="FTCBoW0.model.trainables.vectors_ngrams_lockf.npy">Modelo2</option>
+            <option value="FTCBoW0.model.wv.vectors_ngrams.npy">Modelo3</option>
+            <option value="FTSG0.model">Modelo4</option>
+            <option value="FTSG0.model.trainables.vectors_ngrams_lockf.npy">Modelo5</option>
+            <option value="FTSG0.model.wv.vectors_ngrams.npy">Modelo6</option>
+          </select>
+        </div>
+        <input
+          type="submit"
+          class="btn btn-dark"
+          value="Enviar"
+          style="margin-top: 3%"
+        />
+      </div>
+    </form>
+</div>
+{% endblock contenido %}

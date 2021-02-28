@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+    <title>{% block titulo %}Tesis{% endblock titulo %}</title>
+
+    {% block css %} {% endblock css %}
+    <!--Aqui CSS-->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/Buscador.css' %}" rel="stylesheet" />
+    <link href="{% static 'scss/Animacion.scss '%}"  rel = "stylesheet" >
+  </head>
+  <body class="bg-white">
+    {% block contenido %}
+    <!--Aqui si cargan los templates-->
+    {% endblock contenido %}
+
+    <!--Aqui JS-->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/Buscador.js' %}"></script>
+    {% block Js %} {% endblock Js %}
+  </body>
+</html>
