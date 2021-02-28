@@ -105,6 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+encoded = base64.b64encode(bytes(SECRET_KEY, 'utf-8'))
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
@@ -127,7 +128,7 @@ EP_LENGUAGE = 'python'
 STATIC_URL = '/static/'
 
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, 'Tesis', 'static'))
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
